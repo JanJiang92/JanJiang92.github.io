@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Two Number SumMethod: unordered_set O(n) time, O(n) space due to container set;double pointer O(nlogn)  time, O(1);O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) In computers, it’s log base 2 and not base">
+<meta property="og:type" content="article">
+<meta property="og:title" content="coding_with_AlgoExpert">
+<meta property="og:url" content="http://example.com/2020/11/29/coding-with-AlgoExpert/index.html">
+<meta property="og:site_name" content="Jan_Jiang Blog">
+<meta property="og:description" content="Two Number SumMethod: unordered_set O(n) time, O(n) space due to container set;double pointer O(nlogn)  time, O(1);O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) In computers, it’s log base 2 and not base">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-29T12:37:41.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:19:06.254Z">
+<meta property="article:author" content="Jan Jiang">
+<meta property="article:tag" content="Array">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/11/29/coding-with-AlgoExpert/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>coding_with_AlgoExpert | Jan_Jiang Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jan_Jiang Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">study footprint</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/29/coding-with-AlgoExpert/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jan Jiang">
+      <meta itemprop="description" content="beauty everyday life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan_Jiang Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          coding_with_AlgoExpert
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-29 13:37:41" itemprop="dateCreated datePublished" datetime="2020-11-29T13:37:41+01:00">2020-11-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-07 11:19:06" itemprop="dateModified" datetime="2020-12-07T11:19:06+01:00">2020-12-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ol>
+<li>Two Number Sum<br>Method: unordered_set O(n) time, O(n) space due to container set;<br>double pointer O(nlogn)  time, O(1);<br>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) In computers, it’s log base 2 and not base 10. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   vector&lt;int&gt; twoNumberSum(vector&lt;int&gt; array, int targetSum) &#123;</span><br><span class="line">  &#x2F;&#x2F; set instead of hashmap,because unrelated the position of element</span><br><span class="line">	unordered_set&lt;int&gt; uSet;</span><br><span class="line">	for(auto ele:array)&#123; &#x2F;&#x2F;instead of input firstly then find</span><br><span class="line">		if (uSet.find(targetSum-ele)!&#x3D;uSet.end())</span><br><span class="line">			 return &#123;ele,targetSum-ele&#125;;&#x2F;&#x2F; can return two elements with the method</span><br><span class="line">		else</span><br><span class="line">					uSet.insert(ele);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">  return &#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li><p>Validate Subsequence<br>Description:unnessarily adjacent in the array but in the same order<br>Method:  rapid and slow pointer  O(n) time, O(1) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   bool isValidSubsequence(vector&lt;int&gt; array, vector&lt;int&gt; sequence) &#123;</span><br><span class="line">  &#x2F;&#x2F; rapid and slow pointer</span><br><span class="line">	int arrIndex&#x3D;0;</span><br><span class="line">	int seqIndex&#x3D;0;</span><br><span class="line"></span><br><span class="line">		while(arrIndex&lt;array.size() &amp;&amp; seqIndex&lt; sequence.size())&#123;</span><br><span class="line">			if(sequence[seqIndex]&#x3D;&#x3D;array[arrIndex])</span><br><span class="line">			  	seqIndex++;</span><br><span class="line">			arrIndex++;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">  return seqIndex&#x3D;&#x3D;sequence.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Three Number Sum<br>Method: triple pointer  O(n^2) time, O(n) space</p>
+</li>
+<li><p>Smallest Difference<br>Method: double pointer( rapid and slow pointer)  O(nlog(n)+mlog(m)) time, O(1) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   vector&lt;int&gt; smallestDifference(vector&lt;int&gt; arrayOne, vector&lt;int&gt; arrayTwo) &#123;</span><br><span class="line">  &#x2F;&#x2F;double pointers</span><br><span class="line">	sort(arrayOne.begin(),arrayOne.end());</span><br><span class="line">	sort(arrayTwo.begin(),arrayTwo.end());</span><br><span class="line">	vector&lt;int&gt; res;</span><br><span class="line">	int abs_val&#x3D;INT_MAX;</span><br><span class="line">	int arroneidx&#x3D;0;</span><br><span class="line">	int arrtwoidx&#x3D;0;</span><br><span class="line">	while(arroneidx&lt;arrayOne.size() &amp;&amp; arrtwoidx&lt;arrayTwo.size())&#123;</span><br><span class="line">		if(abs(arrayOne[arroneidx]-arrayTwo[arrtwoidx])&lt;abs_val)&#123;</span><br><span class="line">						abs_val&#x3D;abs(arrayOne[arroneidx]-arrayTwo[arrtwoidx]);</span><br><span class="line">			       res&#x3D;&#123;arrayOne[arroneidx], arrayTwo[arrtwoidx]&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		if(arrayOne[arroneidx]&lt;arrayTwo[arrtwoidx])&#123;</span><br><span class="line">			 arroneidx++;</span><br><span class="line">		&#125;else if(arrayOne[arroneidx]&gt;arrayTwo[arrtwoidx])&#123;</span><br><span class="line">				arrtwoidx++;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return &#123;arrayOne[arroneidx], arrayTwo[arrtwoidx]&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">  return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Move Element To End (mutate original array)<br>Method: double pointer O(n) time, O(1) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   vector&lt;int&gt; moveElementToEnd(vector&lt;int&gt; array, int toMove) &#123;</span><br><span class="line">  &#x2F;&#x2F; double pointer</span><br><span class="line">	int frontIdx&#x3D;0;</span><br><span class="line">	int tailIdx&#x3D;array.size()-1;</span><br><span class="line">	while(frontIdx&lt;tailIdx)&#123;</span><br><span class="line">		if(array[frontIdx]&#x3D;&#x3D;toMove)&#123;</span><br><span class="line">			 swap(array[frontIdx],array[tailIdx]);</span><br><span class="line">			 tailIdx--;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			frontIdx++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Monotonic Array<br>Method:judge if neither no-decrease nor no-increase O(n) time, O(1) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  bool isMonotonic(vector&lt;int&gt; array) &#123;</span><br><span class="line">  &#x2F;&#x2F; </span><br><span class="line">	if(array.size()&lt;&#x3D;2) </span><br><span class="line">		return true;</span><br><span class="line">	bool isNonInc&#x3D;true;</span><br><span class="line">	bool isNonDec&#x3D;true;</span><br><span class="line">	for(int i&#x3D;0;i&lt;array.size()-1;i++)&#123;</span><br><span class="line">		if(array[i]&gt;array[i+1])</span><br><span class="line">			isNonDec&#x3D;false;</span><br><span class="line">		if(array[i]&lt;array[i+1])</span><br><span class="line">			isNonInc&#x3D;false;</span><br><span class="line">	&#125;</span><br><span class="line">  return isNonDec || isNonInc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>7.spiral traverse</p>
+<p>8.Array of Products<br> Method:the product with the ele as centre divided into left and right part   O(n) time, O(n) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> vector&lt;int&gt; arrayOfProducts(vector&lt;int&gt; array) &#123;</span><br><span class="line">  &#x2F;&#x2F; Write your code here.</span><br><span class="line">	int froPro&#x3D;1;</span><br><span class="line">	int tailPro&#x3D;1;</span><br><span class="line">	vector&lt;int&gt; froProArr(array.size(),1);</span><br><span class="line">	vector&lt;int&gt; tailProArr(array.size(),1);</span><br><span class="line">	vector&lt;int&gt; res(array.size(),1);</span><br><span class="line">	for(int i&#x3D;0;i&lt;array.size()-1;i++)&#123;</span><br><span class="line">				 froProArr[i+1]&#x3D;froProArr[i]*array[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	for(int i&#x3D;array.size()-1;i&gt;0;i--)&#123;</span><br><span class="line">				 tailProArr[array.size()-i]&#x3D; tailProArr[array.size()-i-1]*array[i];</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i&#x3D;0;i&lt;array.size();i++)&#123;</span><br><span class="line">				 res[i]&#x3D;froProArr[i]*tailProArr[array.size()-1-i];</span><br><span class="line">	&#125;</span><br><span class="line">  return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>9.Four Number Sum<br>  Method: 1.four pointer two loop  O(n^3) time, O(??) space<br>          2. divide into two two_sum and with map to store the pair numbers and their sum  O(average n^2) time, O(n^2) space</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  vector&lt;vector&lt;int&gt;&gt; fourNumberSum(vector&lt;int&gt; array, int targetSum) &#123;</span><br><span class="line">  vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">	sort(array.begin(),array.end());</span><br><span class="line">	for(int i&#x3D;0;i&lt;array.size();i++)</span><br><span class="line">	  for(int j&#x3D;i+1;j&lt;array.size();j++)&#123;</span><br><span class="line">			  int targetSum_two&#x3D;targetSum-array[i]-array[j];</span><br><span class="line">        int leftPoi&#x3D;j+1;</span><br><span class="line">			  int rigPoi&#x3D;array.size()-1;</span><br><span class="line">			  while(leftPoi&lt;rigPoi)&#123;</span><br><span class="line">					int sumTwo&#x3D;array[leftPoi]+array[rigPoi];</span><br><span class="line">					if(sumTwo&lt;targetSum_two)&#123;</span><br><span class="line">						leftPoi++;</span><br><span class="line">					&#125;else if(sumTwo&gt;targetSum_two)&#123;</span><br><span class="line">						 rigPoi--;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						res.push_back(&#123;array[i],array[j],array[leftPoi],array[rigPoi]&#125;);</span><br><span class="line">						leftPoi++;</span><br><span class="line">						rigPoi--;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;	  	</span><br><span class="line">  return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>Subarray Sort</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Array/" rel="tag"># Array</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/27/planner/" rel="prev" title="计划">
+      <i class="fa fa-chevron-left"></i> 计划
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/system-design/" rel="next" title="system_design">
+      system_design <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jan Jiang</p>
+  <div class="site-description" itemprop="description">beauty everyday life</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jan Jiang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
