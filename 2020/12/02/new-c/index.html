@@ -28,7 +28,7 @@
 <meta property="og:description" content="C++ Interview questions:1.each level of function has its own stack frame2.delete keyword3.the size of a struct equal to the sum of the sizes of the variables that are stored within it: much more effic">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-02T20:28:34.000Z">
-<meta property="article:modified_time" content="2020-12-17T14:44:19.237Z">
+<meta property="article:modified_time" content="2021-02-15T20:32:25.293Z">
 <meta property="article:author" content="Jan Jiang">
 <meta name="twitter:card" content="summary">
 
@@ -181,7 +181,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-17 15:44:19" itemprop="dateModified" datetime="2020-12-17T15:44:19+01:00">2020-12-17</time>
+                <time title="Modified: 2021-02-15 21:32:25" itemprop="dateModified" datetime="2021-02-15T21:32:25+01:00">2021-02-15</time>
               </span>
 
           
@@ -195,8 +195,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>C++ Interview questions:<br>1.each level of function has its own stack frame<br>2.delete keyword<br>3.the size of a struct equal to the sum of the sizes of the variables that are stored within it: much more efficient for the compiler to store things within blocks of four bytes based on the way that memory addresses work<br>4. purpose of using #ifdef and #if:<br>   4.1.control the flow of code from make-file, cross-platform programming, easy switch between debug and release mode, making include guards<br>   4.2.include guards - avoiding #include the same file twice<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33117233/what-does-purpose-use-ifdef-and-if-in-c">#ifdef</a><br>5. null(with that compiler would be confused and treat it either as pointer or number 0) and nullptr-a null of pointer with the value of null</p>
-<p> keyword:<br> 0. dot(.) and arrow operator(-&gt;) <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1238613/what-is-the-difference-between-the-dot-operator-and-in-c">difference</a>:-&gt; can be overloaded<br> 1.<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/g-fact-93/">explicit used in front of constructor</a><br>          useage: avoiding such implicit conversation, where the constructor with a single argument be implicitly handled.</p>
+        <p>C++ Interview questions:<br>1.each level of function has its own stack frame<br>2.delete keyword<br>3.the size of a struct equal to the sum of the sizes of the variables that are stored within it: much more efficient for the compiler to store things within blocks of four bytes based on the way that memory addresses work<br>4. purpose of using #ifdef and #if:<br>   4.1.control the flow of code from make-file, cross-platform programming, easy switch between debug and release mode, making include guards<br>   4.2.include guards - avoiding #include the same file twice<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33117233/what-does-purpose-use-ifdef-and-if-in-c">#ifdef</a><br>5. null(with that compiler would be confused and treat it either as pointer or number 0) and nullptr-a null of pointer with the value of null<br>6. just in your scope using namespace std rather than declare it in hte head file<br> keyword:<br> 0. dot(.) and arrow operator(-&gt;) <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1238613/what-is-the-difference-between-the-dot-operator-and-in-c">difference</a>:-&gt; can be overloaded<br> 1.<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/g-fact-93/">explicit used in front of constructor</a><br>          useage: avoiding such implicit conversation, where the constructor with a single argument be implicitly handled.</p>
 <p> 2.[ initializer_list<T>]   initialise the specific variables</p>
 <ol start="3">
 <li><p>auto and decltype - uitilitzd to build up the Template:<br>auto used to specify the variable with the particular type<br>decltype: extract its type from variable<br>eg. typedef declttype(vari_name) my_self_defined_type;     </p>
@@ -205,6 +204,20 @@
 <pre><code>    in a nutshell: avoiding itself overridded and derived </code></pre>
 </li>
 <li><p>Lambda expression <a href="parameters">capture clause</a>-&gt;return-type{ definition of method}</p>
+</li>
+<li><p>mutable normally used in lamda and const subfunction </p>
+</li>
+<li><p>overload &lt;&lt; friend ostream&amp; operator&lt;&lt;(ostream&amp; output, const Box&amp; B){</p>
+<pre><code>output&lt;&lt;B.l&lt;&lt;&#39; &#39;&lt;&lt;B.b&lt;&lt;&#39; &#39;&lt;&lt;B.h;
+return output;</code></pre>
+<p>}</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/alandefreitas/moderncpp">https://github.com/alandefreitas/moderncpp</a></p>
+</li>
+<li><p>For_each loops standard-2020</p>
+</li>
+<li><p>lamdas closure objekt anonymous function<br>int i = 7;<br>[](int &amp; v){ v *= 6; } (i);<br>cout &lt;&lt; “the correct value is: “ &lt;&lt; i &lt;&lt; endl;</p>
+<p>int j = 7;<br>[](int &amp; v, int j){ v *= j; } (j,6);<br>cout &lt;&lt; “j: “ &lt;&lt; j &lt;&lt; endl;</p>
 </li>
 </ol>
 
@@ -300,12 +313,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -332,7 +345,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

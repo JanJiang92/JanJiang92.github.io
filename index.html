@@ -148,6 +148,357 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/CI-CD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jan Jiang">
+      <meta itemprop="description" content="beauty everyday life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan_Jiang Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/16/CI-CD/" class="post-title-link" itemprop="url">CI/CD</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-16 10:12:11" itemprop="dateCreated datePublished" datetime="2021-02-16T10:12:11+01:00">2021-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-17 13:30:20" itemprop="dateModified" datetime="2021-02-17T13:30:20+01:00">2021-02-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.install Docker<br>  P1:WSL2 installation is incomplete<br>     -&gt;install WSL 2 linux kernel<br>       -&gt;<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package</a><br>2. running jenkins in docker with jenkins linux container image<br>   P1. Error response from daemon: \Users\jiang%!(EXTRA string=is not a valid Windows path).<br>     -&gt;englich version-<a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/installing/docker/#setup-wizard">https://www.jenkins.io/doc/book/installing/docker/#setup-wizard</a><br>       Run a docker:dind Docker image<br>       docker run –name jenkins-docker –rm –detach <code>         --privileged --network jenkins --network-alias docker</code><br>          –env DOCKER_TLS_CERTDIR=/certs <code>          --volume jenkins-docker-certs:/certs/client</code><br>           –volume jenkins-data:/var/jenkins_home `<br>        docker:dind</p>
+<pre><code>   int the thrid step with ` replacing ^  in PowerShell</code></pre>
+<p>   P2. manifest for jenkins:latest not found: manifest unknown: manifest unknown.<br>       “Tag number” should be searched out in Jenkins hub</p>
+<pre><code>P3. check out the password for Unlock Jenkins  
+     docker logs -f jenkins_name 
+     docker exec -it  jenkins:2.60.3 bash
+
+     $ docker run -p &quot;(local)7070&quot;:8080 -p 50000:50000 jenkins/jenkins</code></pre>
+<p><a target="_blank" rel="noopener" href="https://github.com/docker/labs/blob/master/beginner/chapters/setup.md">https://github.com/docker/labs/blob/master/beginner/chapters/setup.md</a></p>
+<p>download docker in disk D</p>
+<p>Installing Jenkins with Docker doc.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/13/Cmake/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jan Jiang">
+      <meta itemprop="description" content="beauty everyday life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan_Jiang Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/13/Cmake/" class="post-title-link" itemprop="url">Cmake</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-02-13 20:32:25 / Modified: 22:09:26" itemprop="dateCreated datePublished" datetime="2021-02-13T20:32:25+01:00">2021-02-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Abstract:</p>
+<ol>
+<li>searching out useful resource<br>1.1 <a target="_blank" rel="noopener" href="https://www.quora.com/What-are-some-good-tutorials-on-using-CMake">https://www.quora.com/What-are-some-good-tutorials-on-using-CMake</a><pre><code>---&gt; a good open source c++ project for training Cmake writing</code></pre>
+</li>
+<li>how to weight out the Cmake ability?</li>
+</ol>
+<p>Websites:</p>
+<p><a target="_blank" rel="noopener" href="https://www.siliceum.com/en/blog/post/cmake_01_cmake-basics">https://www.siliceum.com/en/blog/post/cmake_01_cmake-basics</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/31/code-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jan Jiang">
+      <meta itemprop="description" content="beauty everyday life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan_Jiang Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/31/code-review/" class="post-title-link" itemprop="url">code_review</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-31 21:39:48" itemprop="dateCreated datePublished" datetime="2021-01-31T21:39:48+01:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-08 20:47:34" itemprop="dateModified" datetime="2021-02-08T20:47:34+01:00">2021-02-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>words:<br>serious performance overhead<br>concatenation</p>
+<p><a target="_blank" rel="noopener" href="https://codereview.stackexchange.com/questions/86341/first-oop-in-c-car-example?newreg=3a18e9bf56f844aeaa8ecab46d777333">https://codereview.stackexchange.com/questions/86341/first-oop-in-c-car-example?newreg=3a18e9bf56f844aeaa8ecab46d777333</a></p>
+<p>1.single responsibility principle<br>2.PascalCase for types only and camelCase for variables and functions/methods</p>
+<p><a target="_blank" rel="noopener" href="https://codereview.stackexchange.com/questions/165851/c-string-operators/165852#165852">https://codereview.stackexchange.com/questions/165851/c-string-operators/165852#165852</a></p>
+<p>1.Don’t include unnecessary headers<br>2.we prefer <cstring> to &lt;string.h&gt;<br>3.only need <ostream> rather than <iostream><br>4.Avoid importing all of namespace std<br>5. static diagnostics with g++ -weffc++ to find out the warning<br>6.BUG - be careful using a null pointer as sentinel</p>
+<p>7.Add a move constructor<br>8. size_t(unsigned_int) is more appropriate than int as the type of the index.</p>
+<p>When you design object oriented programs you want to try to follow the SOLID design principles.</p>
+<p>convention has emerged that public properties and methods should be at the top of the class declaration so that the programmers working with you can easily find them</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/28/interview-huawei/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jan Jiang">
+      <meta itemprop="description" content="beauty everyday life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan_Jiang Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/28/interview-huawei/" class="post-title-link" itemprop="url">interview_huawei</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-28 20:25:33" itemprop="dateCreated datePublished" datetime="2020-12-28T20:25:33+01:00">2020-12-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-20 10:21:24" itemprop="dateModified" datetime="2021-01-20T10:21:24+01:00">2021-01-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>getline(cin, str)</p>
+<ol>
+<li><p>sorting ASCII from small to large<br>1.1. violence, like the method “sort”.<br>1.2. hashmap + ASCII tablle</p>
+</li>
+<li><p>sorting string acorrding to dictionary order<br>2.1 container: with the help of vector</p>
+</li>
+<li><p>the last word’s length in a string<br>str.substr(position_begin, substr_len); when substr_len&gt;str.size() output is just self.<br>str.length();</p>
+</li>
+<li><p>counting the times of a character appearing</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isalpha()  tolower() islower() isupper() toupper() </span><br></pre></td></tr></table></figure></li>
+<li><p>接受一个十六进制的数，输出该数值的十进制表示。<br> #include<cmath><br> pow(16,bit++)<br> str[i]-‘A’+10</p>
+</li>
+<li><p>图片整理(ASCII码值从小到大)常见ASCII码的大小顺序的规则是：0<del>9＜A</del>Z＜a~z<br>sort(str.begin(),str.end());</p>
+</li>
+<li><pre><code>蛇形矩阵</code></pre>
+</li>
+<li><p>生羊(dynamic programming(a kind of iteration))</p>
+</li>
+<li><p>迷宫问题(backstepping(from top start, with a little recursive feeling in terms of data store),dynamic pro)<br>backstepping:<br>   flag assign to 1<br>   push_back<br>   handling diff cases<br>   pop_back<br>   flag assign to 0</p>
+<p>2-dimensional assignment</p>
+<pre><code>maze = vector&lt;vector&lt;int&gt;&gt;(N, vector&lt;int&gt;(M, 0));
+path_temp.clear();
+path_best.clear();
+for (auto &amp;i : maze)
+    for (auto &amp;j : i)
+        cin &gt;&gt; j;   </code></pre>
+</li>
+</ol>
+<p>10.int型数据在内存中存储时1的个数<br>    m&gt;&gt;=1;; m&amp;1</p>
+<ol start="11">
+<li><p>数字颠倒<br>#include&lt;bits/stdc++.h&gt; or #include<algorithm><br>s = to_string(num);<br>reverse(s.begin(), s.end());</p>
+</li>
+<li><p>perfect_num<br>perfect_num= {6, 28, 496, 8128};</p>
+</li>
+<li><p>杨辉三角的变形第一个偶数，找规律</p>
+</li>
+<li><p>表达式求值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isdigit </span><br></pre></td></tr></table></figure></li>
+<li><p>检查是否是闰年</p>
+<pre><code>&#123;% codeblock %&#125; if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+		return true;
+    int a[] = &#123; 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 &#125;;
+    是闰年就多加1 &#123;% endcodeblock %&#125;</code></pre>
+</li>
+<li><p>走方格的方案数<br>dynamic or recursive</p>
+</li>
+<li><p>最长回文子串或Redrainment走法<br>dynamic pro<br>attention:rightprt from 0 begin, and leftptr from 0 to rightprt</p>
+</li>
+<li><p>质数因子<br>加速方法:     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;math.h&gt;     for(int i&#x3D;2;i*i&lt;&#x3D;sqrt(num);) </span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>19  提取不重复的整数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(mySet.count(aim) &#x3D;&#x3D; 1) or s.find(a) &#x3D;&#x3D; s.end()</span><br><span class="line">    mySet.insert(aim);</span><br></pre></td></tr></table></figure></li>
+<li><p>简单密码<br> 定义数组》<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;const string dict1&#x3D;&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;  </span><br></pre></td></tr></table></figure></p>
+<pre><code>     //const string dict2=&quot;bcdefghijklmnopqrstuvwxyza22233344455566677778889999&quot;;</code></pre>
+</li>
+<li><p>迷宫问题<br>#include &lt;limits.h&gt;  for INT_MAX<br>vect.push_back( make_pair(arr[i],arr1[i]) );<br>vector&lt;vector<int>&gt; tabVec(row,vector<int>(col,0));</p>
+<pre><code>for(int i=0;i&lt;row;i++)
+    for(int j=0;j&lt;col;j++)&#123;
+        cin&gt;&gt;tabVec[i][j];
+    &#125;</code></pre>
+</li>
+<li><p>名字的漂亮度<br>int n = sizeof(arr) / sizeof(arr[0]);</p>
+<p>/<em>Here we take two parameters, the beginning of the<br>array and the length n upto which we want the array to<br>be sorted</em>/<br>sort(arr, arr + n);<br>sort(countArr,countArr+26,[](int a,int b){return a&gt;b;});</p>
+<p>map&lt;int, int,greater <int>&gt; gquiz1; Descending</p>
+</li>
+<li><p>扑克牌大小</p>
+<pre><code>(str.find(&quot;joker JOKER&quot;) != string::npos)
+size_t pos = str.find(&#39;-&#39;);
+string s1 = str.substr(0, pos);
+string s2 = str.substr(pos + 1);</code></pre>
+</li>
+<li><p>去重<br>unique(ret.begin(), ret.end() 去重对相邻数据<br>ret.erase(unique(ret.begin(), ret.end()), ret.end()); 去除后面无意义的部分</p>
+</li>
+</ol>
+<p>25.输入参数的立方根。保留一位小数。        printf(“%.1lf”,mid);</p>
+<p>exprience:<br>    myvector.erase(it,it1); delete[it,it1)<br>    iterator used to iterate through the elements in the container<br>    问题出在 输出的第一个数也需要转十六进制</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/20/%E5%89%8D%E7%9E%BB%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -174,6 +525,13 @@
 
               <time title="Created: 2020-12-20 22:24:48" itemprop="dateCreated datePublished" datetime="2020-12-20T22:24:48+01:00">2020-12-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-08 22:54:41" itemprop="dateModified" datetime="2021-02-08T22:54:41+01:00">2021-02-08</time>
+              </span>
 
           
 
@@ -186,7 +544,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>specifically; whereas; technically result in;<br>thanks you for reaching out<br>has nothing to do with<br>grab the 64-bit windows<br>once I downloaded abs extracted them</p>
+<p>static linking means that the library actually gets basically put into your executable<br>so just it’s inside your DX file, whereas[\red] the dynamic library gets acutally linked at runtime, so you still do have some kind of linkage, you can chooose to alert a dynamic library(API or DLL file)</p>
+<p>That difference of whether or not your library actually gets complied into your exe file or linked into your exa file and actually having a separate file for your library at the runtime</p>
+<p>smart learn:<br>concept once grasped will stay with you a lifetime<br>facts - can be easy searched </p>
+<p>superficial thinking<br>the more you get into the understanding the better</p>
+
       
     </div>
 
@@ -296,7 +659,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-17 15:44:19" itemprop="dateModified" datetime="2020-12-17T15:44:19+01:00">2020-12-17</time>
+                <time title="Modified: 2021-02-15 21:32:25" itemprop="dateModified" datetime="2021-02-15T21:32:25+01:00">2021-02-15</time>
               </span>
 
           
@@ -310,8 +673,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>C++ Interview questions:<br>1.each level of function has its own stack frame<br>2.delete keyword<br>3.the size of a struct equal to the sum of the sizes of the variables that are stored within it: much more efficient for the compiler to store things within blocks of four bytes based on the way that memory addresses work<br>4. purpose of using #ifdef and #if:<br>   4.1.control the flow of code from make-file, cross-platform programming, easy switch between debug and release mode, making include guards<br>   4.2.include guards - avoiding #include the same file twice<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33117233/what-does-purpose-use-ifdef-and-if-in-c">#ifdef</a><br>5. null(with that compiler would be confused and treat it either as pointer or number 0) and nullptr-a null of pointer with the value of null</p>
-<p> keyword:<br> 0. dot(.) and arrow operator(-&gt;) <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1238613/what-is-the-difference-between-the-dot-operator-and-in-c">difference</a>:-&gt; can be overloaded<br> 1.<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/g-fact-93/">explicit used in front of constructor</a><br>          useage: avoiding such implicit conversation, where the constructor with a single argument be implicitly handled.</p>
+          <p>C++ Interview questions:<br>1.each level of function has its own stack frame<br>2.delete keyword<br>3.the size of a struct equal to the sum of the sizes of the variables that are stored within it: much more efficient for the compiler to store things within blocks of four bytes based on the way that memory addresses work<br>4. purpose of using #ifdef and #if:<br>   4.1.control the flow of code from make-file, cross-platform programming, easy switch between debug and release mode, making include guards<br>   4.2.include guards - avoiding #include the same file twice<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33117233/what-does-purpose-use-ifdef-and-if-in-c">#ifdef</a><br>5. null(with that compiler would be confused and treat it either as pointer or number 0) and nullptr-a null of pointer with the value of null<br>6. just in your scope using namespace std rather than declare it in hte head file<br> keyword:<br> 0. dot(.) and arrow operator(-&gt;) <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1238613/what-is-the-difference-between-the-dot-operator-and-in-c">difference</a>:-&gt; can be overloaded<br> 1.<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/g-fact-93/">explicit used in front of constructor</a><br>          useage: avoiding such implicit conversation, where the constructor with a single argument be implicitly handled.</p>
 <p> 2.[ initializer_list<T>]   initialise the specific variables</p>
 <ol start="3">
 <li><p>auto and decltype - uitilitzd to build up the Template:<br>auto used to specify the variable with the particular type<br>decltype: extract its type from variable<br>eg. typedef declttype(vari_name) my_self_defined_type;     </p>
@@ -320,6 +682,20 @@
 <pre><code>    in a nutshell: avoiding itself overridded and derived </code></pre>
 </li>
 <li><p>Lambda expression <a href="parameters">capture clause</a>-&gt;return-type{ definition of method}</p>
+</li>
+<li><p>mutable normally used in lamda and const subfunction </p>
+</li>
+<li><p>overload &lt;&lt; friend ostream&amp; operator&lt;&lt;(ostream&amp; output, const Box&amp; B){</p>
+<pre><code>output&lt;&lt;B.l&lt;&lt;&#39; &#39;&lt;&lt;B.b&lt;&lt;&#39; &#39;&lt;&lt;B.h;
+return output;</code></pre>
+<p>}</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/alandefreitas/moderncpp">https://github.com/alandefreitas/moderncpp</a></p>
+</li>
+<li><p>For_each loops standard-2020</p>
+</li>
+<li><p>lamdas closure objekt anonymous function<br>int i = 7;<br>[](int &amp; v){ v *= 6; } (i);<br>cout &lt;&lt; “the correct value is: “ &lt;&lt; i &lt;&lt; endl;</p>
+<p>int j = 7;<br>[](int &amp; v, int j){ v *= j; } (j,6);<br>cout &lt;&lt; “j: “ &lt;&lt; j &lt;&lt; endl;</p>
 </li>
 </ol>
 
@@ -372,7 +748,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-20 21:15:28" itemprop="dateModified" datetime="2020-12-20T21:15:28+01:00">2020-12-20</time>
+                <time title="Modified: 2021-02-24 08:37:34" itemprop="dateModified" datetime="2021-02-24T08:37:34+01:00">2021-02-24</time>
               </span>
 
           
@@ -404,7 +780,73 @@
 <li>welche aufgabe sollte man erledigen?</li>
 <li>Umsetzungen</li>
 </ol>
-<p>basysKom:<br>gegründet im Jahr 2004<br>beschäftigungsbereich: QT-servicepartner; Embedded-Linux QT Applikationen<br>relevante projekt: GUI mit Python<br>                   QT matplotlib; pyqt5-&gt;<br>                   eine Dynamische Ergebnisse werden angezeigt, wenn sich Input oder PID Parameter verändert</p>
+<p>basysKom:<br>gegründet im Jahr 2004<br>beschäftigungsbereich: QT-servicepartner; Embedded-Linux QT Applikationen</p>
+<p>relevante projekt: GUI mit Python<br>                   QT matplotlib; pyqt5-&gt;<br>                   eine Dynamische Ergebnisse werden angezeigt, wenn sich Input oder PID Parameter verändert<br>GUI ist ein Untermenge von UI.<br>Der Entwurf von GUI ist immer günstig bei Kommnication zwischen Menschen und Maschinen</p>
+<p>Scoop(14.01.2021)<br>Dr.Wolfgang Reddig</p>
+<p>in 2000 gegründet,<br>dem Fokus auf objektorientiertem Software Engineering und Datenbanktechnologien<br>in Branchen wie Online-Handel, Telekommunikation, Finanzdienstleistung, Logistik und öffentliche Verwaltung.</p>
+<p>Verteilte Systeme<br>Beispiel: Embedded Systems, IOT</p>
+<p>Zusammenfassung: kennte mich für c++ Grammatik bei Ausfindung der gramatischen Fehler aus Complier nicht gut aus. ausgedrückt sich nicht so gut. Frage zu Gesprachspartner nicht gut vorbereitet. Augenweh</p>
+<p>SIEB &amp; MEYER (25.01)</p>
+<p>1962 in Hamburg gegründet.<br>220 Mitarbeiter<br>Steuerungs- und Antriebselektronik;<br>Ziel:Energie Effiziert zu steigern; Kostensenkung Preissdruck</p>
+<p>programmierbaren Steuerung für Leiterplattenbohrmaschinen; programmierbare Einachs-CNC in Digitaltechnik mit integriertem Servoverstärker, Antriebselektronik für Linearmotoren, sowie Frequenzumrichter für Motoren mit extrem hohen Drehzahlen.</p>
+<p>Entwicklung und Herstellung von Elektronik und Software<br>CNC-Steuerungen(Computerized Numerical Control) und Produkte der Antriebselektronik<br>Ziel:Kunden </p>
+<p>Leidenschaft: Begeisterung für Embedded system.<br>Als ich in Hauptseminar Drehzahl von Rädern geregelt(PWM-Pulse width modulation)</p>
+<p>Ich möchte meine Sprache voll ausnutzen</p>
+<p>1.wie sieht der ideale Mitarbeiter des Positions aus<br>2.Die Kluft zwischen mir und dem Ideal<br>3. was ist Ihre Ansichten zu dieser Branche und diesem Beruf ?<br>  4.1. Vorteil when mit ABB Simens verglichen<br>       steuerung simens 20,000, sie 40,000 </p>
+<p>  Rückmeldung:<br>  Kuturelle Schock</p>
+<p>  warum nicht IAV shanghai arbeiten</p>
+<ul>
+<li><p>sollte nicht sagen, dass volkswagen in china besser als sie.</p>
+<p>zukunftig Aussicht 5 Jahre </p>
+<p>service techniker or neue Kunden finden </p>
+</li>
+<li><p>sollte ihn als sales berücksitigen,</p>
+<p>china und deutschland arbeitsplatz auswahlen</p>
+</li>
+<li><p>sollte keine Sorge um ungenügende selbe Erfahrungen machen, wenn andere Interview anbieten.</p>
+</li>
+</ul>
+<p>be.storaged GmbH - Softwareentwickler C++<br>intelligente Vernetzen von Batteriespeichern durch schlaue Algorithmen<br>AI, modernste Batterietechnologie<br>E-Automobil </p>
+<p>Tochter Unternehmen von EWE-Konzern(beste Energiesystem für die Zukunft sowie optimale Lösung)</p>
+<p>Eigenmotivation<br>Selbständig<br>wissbegierig </p>
+<p>code review<br>task-<br>meet certain objectives that have been agreed upon<br>why something is flawed then provide a better alternative; this code doesnt sit well with me but I dont have a clear atlenative<br>checklist-<br>static code analysis - with the complier or the other analysis tool<br>Dependency injection - (client) depends on other object( service)<br>A code reviewer should examine the correctness of the code and its test coverage.<br>being followed, and they should point out unclear names, unhandled edge cases, and code that’s over-engineered or hard to understand.</p>
+<p>from where can i practice my code review ability?</p>
+<p>  Bloomberg(Software Engineer - Frankfurt 86068)<br>  Training consists of lectures, labs and group projects<br>  how we do database systems, network communication, real-time data processing</p>
+<p>  with a real passion  - just do it with help of everything to have it done, dont give up<br>  innovating<br>  collaborate instinctively -communicate what would you in the nexts step do</p>
+<p>  Why do you want to join Bloomberg?<br>Will ask you the tech stack you use in each project. </p>
+<p>  standard algo questions + 1 system design. lots of questions about my resume<br> two questions in 45 mins<br> find the avg of an array<br> DFS island question<br> Algo questions regarding the use of stacks.<br> related to Linked list with three heads and finding their common junction.<br> String Manipulation - but they also expected the solution to use data structures.<br> Create a data structure than can add, remove and getRandom objects<br> First round interview leetcodes were array and string manipulation based<br> cs trivia questions</p>
+<ol>
+<li>Parse streaming data.</li>
+<li>Find the root process.  </li>
+</ol>
+<p>You are given a doubly linked list which in addition to the next and previous pointers, it could have a child pointer, which may or may not point to a separate doubly linked list. These child lists may have one or more children of their own, and so on, to produce a multilevel data structure, as shown in the example below.</p>
+<p>The first 10 mins was intro and some questions about resume. Then proceed to a leetcode medium question. Last 5 mins to ask questions<br>Linked list related questions. Don’t remember the detail<br>Priority Queue using Linked List  </p>
+<p>the actual coding of a difficult feature<br>But, my interviewer talked about how a dev team can have disagreements on how to implement a typical feature, which happens well before the actual coding.</p>
+<p>questions<br>how working at Bloomberg was like during  the whole pandemic situation<br>recent challenges,<br>any hobbies that people at Bloomberg have</p>
+<p>Im my study I have done the projekts just accomplisched it, and didnt take the datan structur into consideration, just implemented the functions.</p>
+<p>Intership: The unit Testing was my main task, in which I have with the cmake built up the test eniroment, under the framenwork of boost unit testing to make the testsuit, finally implemented a GUI tu visualise the unit testing result, of which three mudule reached 100% and the two reached 94% and 72% respectively.(statement coverage)</p>
+<p>component<br>comparison </p>
+<p>interview review:<br>introdution<br>what have you done mit c++ - what have you done while code review?<br>hobby<br>what have you know about bloomberg<br>route mit backstepping </p>
+<p>PSI software<br>1969 in Berlin  gegründet<br>PSI entwickelt und integriert Software für Energieversorger, Industrieunternehmen und Infrastrukturbetreiber</p>
+<p>Erik Herold: Head of Development Energy Control Systems<br>Andreas Scheurich: Divisionsleiter<br>Ines Berger: HR<br>Gerriet Reents</p>
+<p>Vorteil:<br>  Teamplayer-Hauptseminar<br>  Personal- eigenständig arbeiten- vorsehen die Probelme und Lösungen<br>  optimistisch -offen bedeutet vielzahl von Hoffnung<br>  Pflichtbewusstsein-vor First geschafft</p>
+<p>Nachteil:<br>  zu hoch auf eigen Sache konzentiert, famile vernachlässigen<br>  keine Begabung für Sprachen</p>
+<p>Fragen stellen:<br>was ist Ihre Ansichten zu dieser Branche ?<br>Ausbildung anbieten? scrum? Erstattungskosten?<br>typische Arbeitstag?</p>
+<p>interview review:</p>
+<ol>
+<li><p>was gezeigt, in der Visualisierung von GUI? - coverage anaynsis-statement test - redundanz -umstruktuieren</p>
+</li>
+<li><p>wechle version von c++ benutzen? - c++ 11; smarter pointer, lamda, final</p>
+</li>
+<li><p>wechle aufgabe selbststandig gemacht? muss mal fragen, was ist als selbststandig definiert? sich an etwas wenden, wenn fragen zu ewtas, die von anderen gemacht, haben?</p>
+</li>
+<li><p>Regler welche Probleme mit c++ in ROS begegnet? benutzung von cmake<br>-andere Regler war für das Flugroboter umgesetzt, einfach austauschen  </p>
+</li>
+</ol>
+<p>Evotec (04.03.2021)</p>
+<ol>
+<li>wie sind Sie auf uns gekommen?</li>
+</ol>
 
       
     </div>
@@ -551,7 +993,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-07 11:19:06" itemprop="dateModified" datetime="2020-12-07T11:19:06+01:00">2020-12-07</time>
+                <time title="Modified: 2021-03-08 10:25:13" itemprop="dateModified" datetime="2021-03-08T10:25:13+01:00">2021-03-08</time>
               </span>
 
           
@@ -598,183 +1040,8 @@
 <ol start="10">
 <li>Subarray Sort</li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/27/planner/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jan Jiang">
-      <meta itemprop="description" content="beauty everyday life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jan_Jiang Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/27/planner/" class="post-title-link" itemprop="url">计划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-27 23:27:07" itemprop="dateCreated datePublished" datetime="2020-11-27T23:27:07+01:00">2020-11-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-11 11:27:10" itemprop="dateModified" datetime="2020-12-11T11:27:10+01:00">2020-12-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li>数据库调用学习-如数据库建立</li>
-<li>网络技术 TCP/IP协议，通信协议iot</li>
-<li>Grundkenntnisse  Client-Management-Systeme Systemadministration </li>
-<li>开发一款针对在几大特定的求职网站上给出关键字获得相应职位并标注出现的次数</li>
-</ol>
-<p>openpose-pytorch installation <a target="_blank" rel="noopener" href="https://github.com/prasunroy/openpose-pytorch">openpose-pytorch</a>:<br>introdution:<br>Window 64bit; python3.6 installed;</p>
-<p>Requirement:<br>let openpose-pytorch project running based on python3.7</p>
-<p>Process:</p>
-<ol>
-<li><p>python3.7 install<br>Although x86 was originally a 16-bit architecture, the version in use today is the 32-bit extension. x64 is actually more correctly “x86-64”–the 64-bit extension of x86.<br>so 64-bit system download x86-64 version</p>
-</li>
-<li><p>cmd:pip install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio===0.7.0 -f <a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a> (in the process numpy etc dependencies installed into file python37)<br>Attention: the position(should be above the others) of python3.7 in enviroment, while python3.6 and 2.7 installed and being willing to install .whl with 3.7</p>
-</li>
-</ol>
-<ol start="3">
-<li>according to the above website to git clone the project into local(running python setup.py, where some dependencies also installed into file python37)</li>
-</ol>
-<p>Possible problems:</p>
-<p>After Insallation should be continuing according to the Prerequisites(install anaconda) in <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">website</a>? No, because I have python installed by myself and numpy with instructions (pip install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio===0.7.0 -f <a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a>), while with anaconda almost all denpendances can be automatically included. Either of them is ok.</p>
-<p>Normally the .whl can not be installed mainly due to the problem of python version  </p>
-<p>ModuleNotFoundError: No module named ‘pip’<br>=&gt;Just be sure that you have include python to windows PATH variable, then run [python -m ensurepip]</p>
-<p>RuntimeError: The current Numpy installation fails to pass a sanity check due to a bug in the windows runtime [duplicate]<br>=&gt;The temporary solution is to use numpy 1.19.3.<br>  pip install numpy==1.19.3</p>
-<p>Result:<br>In my computer installed:<br>torch-1.7.0%2Bcpu-cp36-cp36m-win_amd64(based on python36, but maybe no connection between the 36s)<br>torch-1.7.0%2Bcpu-cp37-cp37m-win_amd64(based on python37)</p>
-<p>Encapsulation:<br>Writing a class encapsulation to achieve the function&gt; input:image output: key positions</p>
-<p>next step:<br>openpose尽量找个用pytorch写的，好一点的<br>可以试试这个：<a target="_blank" rel="noopener" href="https://github.com/prasunroy/openpose-pytorch">https://github.com/prasunroy/openpose-pytorch</a><br>然后以来用pip安装的，不要conda的<br>这部分就是能实现输入任意图片(分辨率)，输出关键点就行=&gt;测试<br>你也可以试试其他袋码的，就是越简洁越好(就是不需要太多不相关的功能，不比如训练，测试精度那些)=&gt;找合适项目<br><a target="_blank" rel="noopener" href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a></p>
-<p>Codesys:port 11743<br>The CODEsys control PLC allows executing program code with system level access on this maschine.<br>This may pose as a security threat unless appropriate measures are taken to limit network access to this maschine.</p>
-<p>system level access=&gt;the problem? to do: limit network access, should be degraded with windows admin  right?</p>
-<p>Solution: I had installed version Codesys V3.5 SP16 Patch3, before instead of that Codesys V3.5 SP16 Patch2 was reinstalled and successfully connecting Control Win systray 64.</p>
-<p>what is gateway?</p>
-<p>dialog (08-11.12.2020)</p>
-<p>07.12.2020 wurde eine gespräch mit Faun Umwelttechnik gefhührt, eigentlich hätte ich kaum Chance ins nächsten Schritt einzutreten, bevor ich meine Familie erwähnte. Als Ergebnis bekommte ich eine Chance, nächste drei Tage nach Bremen zu fahren und Probentage zu führen. Damit habe ich mich davor gar nicht gerechnet, dass deutsche Firma so effizient ist. Na dann musste ich die Chance ergreifen. </p>
-<p>Nach eine Lange Fahrt mit Bahn um 21:00 Uhr war ich in dem Zielort angekommen, und glücklich alles insgesamt<br>in Ordnung. Der Besizer des Hotel sind ganz freundlich und ließ mich keine Sorge, obwohl ich beim Schlaf noch nicht so Ruhig. Am erste Tag im Unternehmen hatte der Leiter, Herr Leif Börger, einen ganzen Mrogen verbraucht mich zu begleiten im Werk überall zu schauen und mich erzählt, was ist ihre Aufgabe. Endlich mir eine kleine Programmierungsaufgabe abgegeben, “wie viel mal dem Fahrzeug eingetankt wurden, wenn den Maximalwert überschritten geben eine Anmeldung” eine nicht so komplexe aber spannende Aufgabe. Weil der Programmierungssprache nicht wie C++ or Java, welche popülär sind, sondern codesys eine struktuiert text, war. Dafür war ich nicht so zufrieden und der Teamleiter auch eine tatsählich person oft mit fack oder verdammt, was lässt mich  ihn eine reale Person anstatt manche gut audgebildeten Personen betrachten.</p>
-<p>Aber wonach ich suche? wie sieht der Aussicht der Arbeit aus? Davor habe ich immer gedacht, dass ich eine reine Software entwickler wäre. Aber jetzt steht ich vor dem Umgang mit dem realen Fahrzeug. Aber das wäre auch cool, wenn mit nicht so komplexe Aufgabe umgehen, würde ich immer mehr Zeit für selben und meine Familie haben. Aber innerhalb mich wohnt ein Person, der starkt Durst nach KarrierenErfolg hat. Ich wünsche mir keinen einfach ergesetzten Person.</p>
-<p>Ich muss sagen, der Stadt, wo ´sich der Unternehmen befindet, ist nicht so lebhaft wie Dresden, auch da momentan keine Bekannte und Freunde. Aber ich gerne nehme die neue Herausforderung über und wünsche ich kann viel ernte.</p>
-<p>Insgesamt gesagt, dass die Reise wunderbar war und wünsche zusammen alles gut.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jan Jiang">
-      <meta itemprop="description" content="beauty everyday life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jan_Jiang Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/26/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-26 22:25:11" itemprop="dateCreated datePublished" datetime="2020-11-26T22:25:11+01:00">2020-11-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-27 23:51:33" itemprop="dateModified" datetime="2020-11-27T23:51:33+01:00">2020-11-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>11.<br>    vector<int> count(IndexMax=size() rather than size()-1, 0);<br>     vector<int>  vec;<br>         the last element=*(vec.end()-1);</p>
+<p>08.03.2021<br>// how to jump out of double loops in tri loops    </p>
 
       
     </div>
@@ -792,6 +1059,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -856,12 +1126,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -888,7 +1158,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
