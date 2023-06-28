@@ -1,0 +1,4 @@
+#include<QDebug>
+Qstring::number --- convert number to string
+
+QWidget is the base class of all use interface.
